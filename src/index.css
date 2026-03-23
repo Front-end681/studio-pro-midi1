@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #1D9E75;
+  --color-accent-amber: #EF9F27;
+  --color-accent-red: #E24B4A;
+  --color-bg-main: #050505;
+  --color-bg-container: #0A0A0A;
+  --color-bg-card: #141414;
+}
+
+html, body, #root {
+  width: 100dvw;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+  background: #050505;
+}
+
+.keyboard-page {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.keyboard-area {
+  flex: 1 !important;
+  min-height: 0 !important;
+  position: relative !important;
+  padding: 0 !important;
+}
+
+.keyboard-inner {
+  position: absolute !important;
+  inset: 0 !important;
+}
+
+.piano-keyboard-root {
+  height: 100% !important;
+  align-self: stretch !important;
+}
+
+.piano-keys-row {
+  height: 100% !important;
+  align-items: stretch !important;
+}
+
+.white-key {
+  height: 100% !important;
+  align-self: stretch !important;
+}
+
+* {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+body {
+  @apply text-[#f0f0f0];
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Piano keys specifically */
+.piano-key {
+  touch-action: none;
+}
+
+/* Safe area for notched phones */
+header {
+  padding-top: env(safe-area-inset-top);
+}
+.bottom-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.bend-strip {
+  padding-left: env(safe-area-inset-left);
+}
+
+/* Styled Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { 
+  background: #333; 
+  border-radius: 2px; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.1; }
+}
